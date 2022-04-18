@@ -1,0 +1,39 @@
+@use './Themes/twilight-5.scss';
+@use './Themes/blessing.scss';
+
+.container {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  width: 100%;
+
+  color: twilight-5.$text-colour;
+
+  .column {
+    flex: auto;
+
+    margin: 32px;
+    padding: 64px;
+    width: 100%;
+
+    // Funky borders
+    outline: twilight-5.$primary-border 8px solid;
+    border: twilight-5.$secondary-border 8px solid;
+    border-bottom: 0;
+    border-right: 0;
+    box-shadow: 8px 8px 0 8px twilight-5.$secondary-border;
+
+    &.playlist {
+      float: left;
+    }
+
+    &.playInfo {
+      float:right;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .column {
+      width: 45%;
+    }
+  }
+}

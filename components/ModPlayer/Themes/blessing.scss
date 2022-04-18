@@ -1,0 +1,20 @@
+// Palette
+$palette-colour-1: #74569b;
+$palette-colour-2: #96fbc7;
+$palette-colour-3: #f7ffae;
+$palette-colour-4: #ffb3cb;
+$palette-colour-5: #d8bfd8;
+
+// Required variables
+$background-colour: $palette-colour-1;
+$primary-border: $palette-colour-5;
+$secondary-border: $palette-colour-3;
+$text-colour: $palette-colour-2;
+$text-highlight-colour: $palette-colour-3;
+
+@font-face {
+  font-family: 'perfect_dos';
+  src: url('/fonts/perfect_dos_vga_437_win.woff');
+  font-weight: normal;
+  font-style: normal;
+}

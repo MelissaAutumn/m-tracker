@@ -1,0 +1,19 @@
+@use '/components/ModPlayer/Themes/twilight-5.scss';
+@use '/components/ModPlayer/Themes/blessing.scss';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'perfect_dos', ui-monospace;
+  background-color: twilight-5.$background-colour;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

@@ -1,0 +1,41 @@
+@use '../Themes/twilight-5.scss';
+@use '../Themes/blessing.scss';
+
+.tree {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.clicky {
+  cursor: pointer;
+  user-select: none;
+}
+
+.selected {
+  color: twilight-5.$text-highlight-colour;
+  //font-weight: bold;
+}
+
+.root::before {
+  content: "\25B6";
+  color: twilight-5.$text-colour;
+  display: inline-block;
+  margin-right: 6px;
+
+}
+.root-active::before {
+  transform: rotate(90deg);
+}
+
+.root {
+  ul {
+    display: none;
+  }
+}
+.root-active {
+  ul {
+    list-style-type: square;
+    display: block;
+  }
+}

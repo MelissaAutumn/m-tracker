@@ -1,5 +1,5 @@
 # m-tracker
-A fun little nest.js app project that uses [chiptune2.js](https://github.com/deskjet/chiptune2.js) and [libopenmpt.js](https://lib.openmpt.org/) to play a variety on module files. (`*.xm`|`*.it`|`*.s3m`|`*.mod`) etc...
+A fun little next.js app project that uses [chiptune2.js](https://github.com/deskjet/chiptune2.js) and [libopenmpt.js](https://lib.openmpt.org/) to play a variety on module files. (`*.xm`|`*.it`|`*.s3m`|`*.mod`) etc...
 
 Why? Because most media players that support/use libopenmpt ignores sub songs entirely, and will only play sub song 1. Also this loops, it's neat.
 

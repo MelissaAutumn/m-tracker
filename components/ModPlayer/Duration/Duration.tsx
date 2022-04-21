@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {IPlayer} from "../../../types/IPlayer";
 import {clearInterval, setInterval} from "timers";
+import style from './Duration.module.scss';
 
 interface IModPlayerDurationProps {
   player : IPlayer
@@ -38,9 +39,17 @@ const Duration = (props:IModPlayerDurationProps) => {
   const position = player.position() as number;
   const duration = player.duration() as number;
 
+  // Ceil to remove percentage widths, and min to make sure repeating samples aren't going past the progress bar
+  const complete = Math.ceil(Math.min(100, (position / duration) * 100));
+
   return (
     <div>
       {position.toFixed(0)} / {duration.toFixed(0)}
+      <div className={style['progress-bar']}>
+        <div className={style['progress-fill']} style={{ width: `${complete}%` }}>
+
+        </div>
+      </div>
     </div>
   )
 }

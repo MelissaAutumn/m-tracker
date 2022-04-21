@@ -176,33 +176,38 @@ const ModPlayer = () => {
   }
 
   return (
-    <div className={styles.container}>
-      <div className={[styles.column, styles.playlist].join(' ')}>
-        <h3>Playlist</h3>
-        <Playlist player={player} interactFn={onSelectSong}/>
+    <div>
+      <div className={styles.container}>
+        <div className={[styles.column, styles.header].join(' ')}>
+          <h1 className={styles.title}>{metadata && (metadata.title)}</h1>
+          <div onClick={togglePlayback}>⏯️</div>
+          {playerReady && (
+            <Duration player={player}/>
+          )}
+        </div>
       </div>
-      <div className={[styles.column, styles.playInfo].join(' ')}>
-      <h1>{metadata && (metadata.title)}</h1>
-      <div onClick={togglePlayback}> PLAY / PAUSE</div>
-      {playerReady && (
-        <Duration player={player}/>
-      )}
-      <h3>Sub Songs</h3>
-      {playerReady && (
-        <SubSongList player={player} play={playSubSong}/>
-      )}
-      <h3>Metadata</h3>
-      {playerReady && (
-        <Metadata player={player}/>
-      )}
+      <div className={styles.container}>
+        <div className={[styles.column, styles.playlist].join(' ')}>
+          <h3>Playlist</h3>
+          <Playlist player={player} interactFn={onSelectSong}/>
+        </div>
+        <div className={[styles.column, styles.playInfo].join(' ')}>
+        <h3>Sub Songs</h3>
+        {playerReady && (
+          <SubSongList player={player} play={playSubSong}/>
+        )}
+        <h3>Metadata</h3>
+        {playerReady && (
+          <Metadata player={player}/>
+        )}
+        </div>
+
+
+        {renderScripts()}
+
+        <MediaSession player={player} isPlaying={audioRef?.current?.paused || false}/>
+        <Audio onRef={onMediaRef} onPlay={onMediaPlay} onPause={onMediaPause} mediaStream={mediaStream} showControls={true}/>
       </div>
-
-
-      {renderScripts()}
-
-      <MediaSession player={player} isPlaying={audioRef?.current?.paused || false}/>
-      <Audio onRef={onMediaRef} onPlay={onMediaPlay} onPause={onMediaPause} mediaStream={mediaStream} showControls={true}/>
-
     </div>
   )
 };

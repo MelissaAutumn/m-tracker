@@ -1,0 +1,14 @@
+@use '../Themes/twilight-5.scss';
+@use '../Themes/blessing.scss';
+
+.progress-bar {
+  background-color: twilight-5.$secondary-border;
+  width: 100%;
+  height: 42px;
+  padding: 8px;
+}
+
+.progress-fill {
+  background-color: twilight-5.$primary-border;
+  height: 24px;
+}
